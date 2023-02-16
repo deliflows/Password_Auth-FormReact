@@ -1,0 +1,94 @@
+What is state?
+-A way to persist data between.
+-What's in motion on the page causes it to rerender.
+-A way to identify and disply what a user has typed.
+-A way to update a variable based on how the user is interacting with the page.
+-Provided by the React Library
+-When we define it, we difine it both with a variable and a function to set the variable.
+- In order to use it, it needs to be initialized with useState().
+
+---- We should never mutate the State directly. Insead, we should have another memory area and use that to update State.
+
+State is a way for us using React, to CAUSE A RERENDER on the screen and hold onto the data bewtween rerenders. To identify a good candidate
+for state, we often find what will PROMPT A  CHANGE based on how the USER INTERACTS with our page,
+and then we will update the state appropriately by using the setting function that we initialized along with the state itself.
+We must be careful in doing this, as we don't want to cause a MUTATION to the state. Instead, we will find a wasy to make sure it is stored in
+another memory area before setting the new state.
+
+A mutation in computer science, is when we have something saved to memory, and, without changing the memory block, update within the memory.
+The diffence between a variable and state is that state will cause a rerender, but a variable along with out standard coding syntax can
+be used when we rerender can help decide what exactly should be shown and displayed on the page.
+VARIABLE DO NOT CAUSE A RERENDER
+
+mutable and immutable
+
+
+
+
+What is a prop?
+
+-Key value pair that is passed down from parent to child.
+-It can be both a variable like data, or it can even be a whole function!
+-It can be passed back up through a function.
+-It needs to be decontstructed or we can call the variable prop or something similar and then use props.{thePropName} to gain access to it.
+
+How is a prop different from an attribute?
+
+-While the prop can be any data type and the attribute can be as well, attributes are defined by their documentation
+-Attributes are a way to add information to an element that you can style.
+-Attributes are borrowed from the HTML Library to either add style or functionality to the element to which they are attached. 
+(style, autofill, maxlength)
+In general, props are created by us, while attributes come from somehwere else, such as HTML.
+
+------ Props are usually attached to components only, whereas attributes are usually found on the HTML elements.
+
+The purpose of prop is to move data or a function from a parent to a child component as a key value pair. 
+To create a prop, we first define it in the parent component by adding both the key and value to the component we want to pass it through.
+-For example, <Component thePropName={thePropValue}/>
+To use a prop, either create a variable in the child function's parameters that will represent the object and then call it using the object's 
+keys or deconstruct it in the child component by calling out each of the properties that we want to have.
+
+-For example,
+function Example(theProp){
+    let aVariable = theProp.thePropName
+}
+or
+
+function Example2({thePropName})
+    // I can now use the prop name here directly.
+
+We cannot pass a prop back up to the parent. Instead, allow a parent component to use something in a child component, we must pass
+down a function as a prop from the parent to the child. Often times we will have a second function in the child component that is
+based off of a user action(event listener). In that function, we will call the prop function that came from the parente, and will pass
+the datat of interest to the parent through this function. Please reference how we got a calue from the search or add bar to the parent 
+component. While props and attributes look very similar to each other, often times we can think of props as things created by us,
+while attributes are things created by HTML to be able to style or add additional functionality to the element.
+
+What is a component?
+
+-Reusable code in react to create the user interface.
+-Represents a collection of HTMML elements.
+-A material UI component is a piece of paper in the scrapbook.
+-A section of your site that can be rerendered without impacting the whole site.
+-It can be a parent, a child. or both.
+-We use jsx to define it in js
+-Since components are written in their own code file, we must export them at the end of their file and import them at the beginning of a file
+that will be using them.
+-----------API isn't in a component, but was exported and used.
+-It is good practice to have App.js to be the location of the condolidation of the Compnents
+
+---- A component represents a collection of HTML elements that we will use repeatedly to create what the user sees on the page.
+We can add state to each component individually which will allow that segment and any children to be rerenedered when that stae is updated.
+A component may be a parent, child or both. As a reminder, since Components are written in their own code file, we must export them at the 
+end of their file and import them at the beginning of a file that will be using them. It is good practive when not using the context system 
+of React to have everything consolidate in the App.js file at the end. Some frameworks such as bootstrap react and material UI use components
+to drive the elements on the page, and each on comes
+
+
+
+REDUX
+
+Context system
+
+
+
